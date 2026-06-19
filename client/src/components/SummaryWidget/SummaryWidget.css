@@ -1,0 +1,119 @@
+/* ============================================================
+   SUMMARY WIDGET STYLES
+   Metric card used on the Dashboard page.
+   Classes prefixed with 'widget-'.
+   ============================================================ */
+
+/* ── Base card — extends .card from global.css ── */
+.widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    transition: box-shadow var(--transition-base),
+        transform var(--transition-base);
+}
+
+.widget:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* ── Header row: title + icon ── */
+.widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.widget-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ── Icon container ── */
+.widget-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+/* Icon variant colours */
+.widget-icon-default {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.widget-icon-danger {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.widget-icon-success {
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.widget-icon-warning {
+    background-color: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+/* ── Main value ── */
+.widget-value {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+}
+
+/* Variant value colours */
+.widget-danger .widget-value {
+    color: var(--color-danger);
+}
+
+.widget-success .widget-value {
+    color: var(--color-success);
+}
+
+.widget-warning .widget-value {
+    color: var(--color-warning);
+}
+
+/* ── Footer row: subtitle + trend ── */
+.widget-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.widget-subtitle {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+/* ── Trend indicator ── */
+.widget-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+}
+
+.widget-trend-up {
+    color: var(--color-success);
+}
+
+.widget-trend-down {
+    color: var(--color-danger);
+}

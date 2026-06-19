@@ -1,0 +1,190 @@
+/* ============================================================
+   SPENDING CHART STYLES
+   Classes prefixed with 'chart-'.
+   ============================================================ */
+
+.chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* ── Header ── */
+.chart-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.chart-title-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.chart-header-icon {
+    color: var(--color-primary);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.chart-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.chart-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ── Toggle buttons ── */
+.chart-toggle {
+    display: flex;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.chart-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: calc(var(--radius-md) - 2px);
+    border: none;
+    background: transparent;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.chart-toggle-btn:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-border);
+}
+
+.chart-toggle-active {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-toggle-active:hover {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+}
+
+/* ── Chart body ── */
+.chart-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* ── Custom tooltip ── */
+.chart-tooltip {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.chart-tooltip-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.chart-tooltip-value {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+/* ── Legend label ── */
+.chart-legend-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+/* ── Category breakdown list (below pie) ── */
+.chart-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+}
+
+.chart-category-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+}
+
+.chart-category-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.chart-category-name {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    flex: 1;
+}
+
+.chart-category-pct {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    width: 36px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.chart-category-amount {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    width: 72px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* ── Empty state ── */
+.chart-empty {
+    padding: var(--spacing-2xl) 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .chart-toggle-btn span {
+        display: none;
+    }
+
+    .chart-category-pct {
+        display: none;
+    }
+}

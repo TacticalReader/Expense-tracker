@@ -1,0 +1,254 @@
+/* ============================================================
+   SIDEBAR STYLES
+   Fixed left panel for protected pages.
+   Classes prefixed with 'sidebar-'.
+   ============================================================ */
+
+/* ── Sidebar panel ── */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    height: 100dvh; /* dynamic viewport — accounts for mobile browser chrome */
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base);
+}
+
+/* ── Brand area ── */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-md);
+    height: var(--navbar-height);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    color: var(--color-text-inverse);
+    flex-shrink: 0;
+}
+
+.sidebar-brand-name {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-close-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-md);
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.sidebar-close-btn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+}
+
+/* ── Navigation ── */
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.sidebar-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.sidebar-nav-link:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+}
+
+.sidebar-nav-link-active {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.sidebar-nav-link-active:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.sidebar-nav-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sidebar-nav-label {
+    flex: 1;
+}
+
+/* ── Bottom section ── */
+.sidebar-bottom {
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
+    padding-bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom)); /* notch/home bar */
+    flex-shrink: 0;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ── User info ── */
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+.sidebar-user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.sidebar-user-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-user-email {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Logout button ── */
+.sidebar-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.sidebar-logout-btn:hover {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.sidebar-logout-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Mobile overlay backdrop ── */
+/* display is controlled entirely by React (conditional render) — no CSS override needed */
+.sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.4);
+    z-index: 99;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+        /* Disable all interaction when sidebar is off-screen.
+           transform only moves visually — without these, buttons
+           behind the screen edge are still clickable & focusable. */
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .sidebar-open {
+        transform: translateX(0);
+        box-shadow: var(--shadow-xl);
+        /* Restore full interaction when open */
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .sidebar-close-btn {
+        display: flex;
+    }
+
+    /* backdrop visibility is handled by React's conditional render, not CSS */
+}

@@ -1,0 +1,169 @@
+/* ============================================================
+   EXPENSE LIST STYLES
+   Classes prefixed with 'expense-list-'.
+   ============================================================ */
+
+.expense-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* ── Loading wrapper ── */
+.expense-list-loading {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-3xl) 0;
+}
+
+/* ── Filter bar card ── */
+.expense-list-filters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* ── Search input ── */
+.expense-list-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.expense-list-search-icon {
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.expense-list-search-input {
+    width: 100%;
+    padding-left: calc(var(--spacing-md) + 15px + var(--spacing-xs));
+    padding-right: var(--spacing-2xl);
+    height: 38px;
+    font-size: var(--font-size-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    outline: none;
+    transition: border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.expense-list-search-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+    background-color: var(--color-surface);
+}
+
+.expense-list-search-clear {
+    position: absolute;
+    right: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    border: none;
+    background-color: var(--color-border);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.expense-list-search-clear:hover {
+    background-color: var(--color-border-strong);
+}
+
+/* ── Filter controls row ── */
+.expense-list-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.expense-list-control-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-text-muted);
+}
+
+.expense-list-select {
+    height: 34px;
+    padding: 0 var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--transition-fast);
+    width: auto;
+}
+
+.expense-list-select:focus {
+    border-color: var(--color-primary);
+}
+
+.expense-list-clear-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+
+/* ── Result count ── */
+.expense-list-count {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ── Cards stack ── */
+.expense-list-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .expense-list-controls {
+        gap: var(--spacing-xs);
+    }
+
+    .expense-list-select {
+        font-size: var(--font-size-xs);
+        padding: 0 var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .expense-list-filters {
+        padding: var(--spacing-md);
+    }
+
+    .expense-list-control-group {
+        width: 100%;
+    }
+
+    .expense-list-select {
+        flex: 1;
+        width: 100%;
+    }
+
+    .expense-list-clear-btn {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}

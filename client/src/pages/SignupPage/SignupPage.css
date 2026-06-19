@@ -1,0 +1,167 @@
+/* ============================================================
+   SIGNUP PAGE STYLES
+   All classes prefixed with 'signup-' to avoid conflicts.
+   Uses CSS variables from global.css only.
+   ============================================================ */
+
+/* ── Full-page centered layout ── */
+.signup-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+}
+
+/* ── Auth card ── */
+.signup-card {
+    width: 100%;
+    max-width: 440px;
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Card header ── */
+.signup-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.signup-brand {
+    display: inline-block;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    text-decoration: none;
+}
+
+.signup-brand:hover {
+    color: var(--color-primary-hover);
+}
+
+.signup-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.signup-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ── Form ── */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* ── Error message ── */
+.signup-error {
+    background-color: var(--color-danger-light);
+    border: 1px solid var(--color-danger-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+    margin-top: var(--spacing-xs);
+}
+
+/* ── Submit button ── */
+.signup-submit {
+    margin-top: var(--spacing-sm);
+}
+
+/* ── Terms note ── */
+.signup-terms {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: var(--line-height-normal);
+}
+
+/* ── Card footer ── */
+.signup-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.signup-footer-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.signup-footer-link {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.signup-footer-link:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* ── Success state ── */
+.signup-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+}
+
+.signup-success-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.signup-success-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+.signup-success-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-normal);
+}
+
+.signup-success-hint {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-loose);
+    max-width: 320px;
+}
+
+.signup-success-btn {
+    margin-top: var(--spacing-sm);
+}
+
+.signup-success-spam {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .signup-card {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+    }
+}

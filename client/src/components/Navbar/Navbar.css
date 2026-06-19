@@ -1,0 +1,182 @@
+/* ============================================================
+   NAVBAR STYLES
+   Fixed top bar for protected pages.
+   Classes prefixed with 'navbar-'.
+   ============================================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    height: var(--navbar-height);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-xl);
+    z-index: 90;
+    box-shadow: var(--shadow-sm);
+    transition: left var(--transition-base);
+}
+
+/* ── Left side ── */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.navbar-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.navbar-menu-btn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+}
+
+.navbar-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    line-height: 1;
+}
+
+/* ── Right side ── */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.navbar-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.navbar-icon-btn:hover {
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+}
+
+/* ── User info pill ── */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    cursor: default;
+}
+
+.navbar-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.navbar-username {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Logout button ── */
+.navbar-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.navbar-logout-btn:hover {
+    background-color: var(--color-danger-light);
+    color: var(--color-danger);
+    border-color: var(--color-danger-border);
+}
+
+.navbar-logout-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .navbar {
+        left: 0;
+        padding: 0 var(--spacing-lg);
+    }
+
+    .navbar-menu-btn {
+        display: flex;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        padding: 0 var(--spacing-md);
+    }
+
+    .navbar-username {
+        display: none;
+    }
+
+    .navbar-logout-text {
+        display: none;
+    }
+
+    .navbar-logout-btn {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        justify-content: center;
+        border-radius: var(--radius-md);
+    }
+}

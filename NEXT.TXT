@@ -1,0 +1,9 @@
+LandingPage.jsx + LandingPage.css
+
+Four sections: sticky header with brand name + login button, hero section with a two-column grid (left: headline + two CTAs, right: a decorative stats preview card with animated progress bars), features grid (3 cards: Track Expenses, Set Budgets, Visual Charts), CTA banner in primary blue, and a minimal footer. Redirects to /dashboard if already logged in. All classes prefixed landing- with full responsive breakpoints for tablet and mobile.
+File 3 & 4 — LoginPage.jsx + LoginPage.css
+
+Centered card layout (max-width 420px). Two fields: email and password. Local validate() runs first — catches empty fields, bad email format, and short passwords before hitting Supabase. login() is called on submit and returns { success, error }. On success → navigates to /dashboard. Error display uses a styled red box with role="alert" for accessibility. Button shows "Signing in..." and disables while authLoading is true. Error clears as soon as user starts typing again.
+File 5 & 6 — SignupPage.jsx + SignupPage.css
+
+Same centered card layout (max-width 440px, slightly wider for 3 fields). Email, password, and confirm password fields. validate() checks all fields, password min-length, and password match before calling Supabase. On success → the entire form swaps out for a clean success screen showing the email they used and "Go to Login" button — no navigation because the user must click their email confirmation link first. formError takes priority over authError in display order.

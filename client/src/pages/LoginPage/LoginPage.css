@@ -1,0 +1,116 @@
+/* ============================================================
+   LOGIN PAGE STYLES
+   All classes prefixed with 'login-' to avoid conflicts.
+   Uses CSS variables from global.css only.
+   ============================================================ */
+
+/* ── Full-page centered layout ── */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+    padding: var(--spacing-md);
+}
+
+/* ── Auth card ── */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ── Card header ── */
+.login-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.login-brand {
+    display: inline-block;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    text-decoration: none;
+}
+
+.login-brand:hover {
+    color: var(--color-primary-hover);
+}
+
+.login-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.login-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ── Form ── */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* ── Error message ── */
+.login-error {
+    background-color: var(--color-danger-light);
+    border: 1px solid var(--color-danger-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-danger);
+    margin-top: var(--spacing-xs);
+}
+
+/* ── Submit button ── */
+.login-submit {
+    margin-top: var(--spacing-sm);
+}
+
+/* ── Card footer ── */
+.login-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.login-footer-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.login-footer-link {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.login-footer-link:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .login-card {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+    }
+}

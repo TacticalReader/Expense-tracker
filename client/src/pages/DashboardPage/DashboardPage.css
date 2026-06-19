@@ -1,0 +1,124 @@
+/* ============================================================
+   DASHBOARD PAGE STYLES
+   Classes prefixed with 'dashboard-'.
+   ============================================================ */
+
+/* ── Push content below fixed navbar ── */
+.app-content {
+    padding-top: calc(var(--navbar-height) + var(--spacing-xl));
+}
+
+/* ── Page header ── */
+.dashboard-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ── Widgets loading placeholder ── */
+.dashboard-widgets-loading {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-2xl) 0;
+}
+
+/* ── 4 summary widget cards row ── */
+.dashboard-widgets {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ── Main two-column grid: chart + recent ── */
+.dashboard-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+/* ── Chart column ── */
+.dashboard-chart-col {
+    min-width: 0;
+}
+
+/* ── Recent transactions column ── */
+.dashboard-recent-col {
+    min-width: 0;
+}
+
+.dashboard-recent-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.dashboard-recent-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dashboard-recent-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.dashboard-recent-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.dashboard-recent-link:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* ── Recent expense cards list ── */
+.dashboard-recent-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* ── Empty state inside recent card ── */
+.dashboard-empty {
+    padding: var(--spacing-xl) 0;
+}
+
+.dashboard-empty-link {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-medium);
+    text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid-4.dashboard-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-4.dashboard-widgets {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 420px) {
+    .grid-4.dashboard-widgets {
+        grid-template-columns: 1fr;
+    }
+}
