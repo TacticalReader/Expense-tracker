@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import {
     LayoutDashboard,
     Receipt,
@@ -10,6 +10,7 @@ import {
     X,
 } from 'lucide-react'
 import useAuth from '../../hooks/useAuth.js'
+import LogoutConfirmModal from '../LogoutConfirmModal/LogoutConfirmModal.jsx'
 import './Sidebar.css'
 
 // Props:
@@ -17,6 +18,7 @@ import './Sidebar.css'
 //   onClose (function) — called when overlay or X button is clicked
 function Sidebar({ isOpen, onClose }) {
     const { user, logout, authLoading } = useAuth()
+    const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
 
     const displayName = user?.email?.split('@')[0] ?? 'User'
     const fullEmail = user?.email ?? ''
@@ -35,7 +37,8 @@ function Sidebar({ isOpen, onClose }) {
         }
     }, [isOpen])
 
-    const handleLogout = async () => {
+    const handleLogoutConfirm = async () => {
+        setShowLogoutConfirm(false)
         onClose?.()
         await logout()
     }
@@ -130,16 +133,24 @@ function Sidebar({ isOpen, onClose }) {
                     {/* Logout button */}
                     <button
                         className="sidebar-logout-btn"
-                        onClick={handleLogout}
+                        onClick={() => setShowLogoutConfirm(true)}
                         disabled={authLoading}
                         aria-label="Log out"
                     >
                         <LogOut size={16} />
-                        <span>{authLoading ? 'Logging out...' : 'Log out'}</span>
+                        <span>Log out</span>
                     </button>
                 </div>
 
             </aside>
+
+            {/* Logout Confirmation Modal */}
+            <LogoutConfirmModal
+                isOpen={showLogoutConfirm}
+                onClose={() => setShowLogoutConfirm(false)}
+                onConfirm={handleLogoutConfirm}
+                isConfirming={authLoading}
+            />
         </>
     )
 }

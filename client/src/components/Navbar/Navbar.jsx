@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Menu, LogOut, Bell, User } from 'lucide-react'
 import useAuth from '../../hooks/useAuth.js'
+import LogoutConfirmModal from '../LogoutConfirmModal/LogoutConfirmModal.jsx'
 import './Navbar.css'
 
 // Props:
@@ -7,15 +9,15 @@ import './Navbar.css'
 //   onMenuClick (function) — called when hamburger is clicked (mobile sidebar toggle)
 function Navbar({ pageTitle = 'Dashboard', onMenuClick }) {
     const { user, logout, authLoading } = useAuth()
+    const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
 
     // Show only the part before '@' as a short display name
     const displayName = user?.email?.split('@')[0] ?? 'User'
     const fullEmail = user?.email ?? ''
 
-    const handleLogout = async () => {
+    const handleLogoutConfirm = async () => {
+        setShowLogoutConfirm(false)
         await logout()
-        // After logout, AuthContext clears user → ProtectedRoute
-        // redirects to /login automatically. No navigate() needed here.
     }
 
     return (
@@ -53,18 +55,26 @@ function Navbar({ pageTitle = 'Dashboard', onMenuClick }) {
                 {/* Logout button */}
                 <button
                     className="navbar-logout-btn"
-                    onClick={handleLogout}
+                    onClick={() => setShowLogoutConfirm(true)}
                     disabled={authLoading}
                     title="Log out"
                     aria-label="Log out"
                 >
                     <LogOut size={16} />
                     <span className="navbar-logout-text">
-                        {authLoading ? 'Logging out...' : 'Logout'}
+                        Logout
                     </span>
                 </button>
 
             </div>
+
+            {/* Logout Confirmation Modal */}
+            <LogoutConfirmModal
+                isOpen={showLogoutConfirm}
+                onClose={() => setShowLogoutConfirm(false)}
+                onConfirm={handleLogoutConfirm}
+                isConfirming={authLoading}
+            />
         </header>
     )
 }

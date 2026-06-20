@@ -29,12 +29,18 @@
 }
 
 .login-brand {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     color: var(--color-primary);
     margin-bottom: var(--spacing-lg);
     text-decoration: none;
+}
+
+.login-brand-icon {
+    flex-shrink: 0;
 }
 
 .login-brand:hover {
@@ -60,8 +66,63 @@
     gap: var(--spacing-sm);
 }
 
+/* ── Label with icon ── */
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.login-label-icon {
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+/* ── Input wrapper with icon ── */
+.login-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-input-icon {
+    position: absolute;
+    left: var(--spacing-md);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.login-input-wrapper input.login-input-with-icon {
+    padding-left: calc(var(--spacing-md) + 16px + var(--spacing-sm)) !important;
+}
+
+.login-input-wrapper input.login-input-with-toggle {
+    padding-right: calc(var(--spacing-md) + 16px + var(--spacing-sm)) !important;
+}
+
+.login-password-toggle {
+    position: absolute;
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    transition: color var(--transition-fast);
+}
+
+.login-password-toggle:hover {
+    color: var(--color-text-primary);
+}
+
 /* ── Error message ── */
 .login-error {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
     background-color: var(--color-danger-light);
     border: 1px solid var(--color-danger-border);
     border-radius: var(--radius-md);
@@ -71,9 +132,48 @@
     margin-top: var(--spacing-xs);
 }
 
+.login-error-icon {
+    flex-shrink: 0;
+}
+
 /* ── Submit button ── */
 .login-submit {
     margin-top: var(--spacing-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.login-submit-arrow {
+    margin-left: auto;
+    transition: transform var(--transition-fast);
+}
+
+.login-submit:hover .login-submit-arrow {
+    transform: translateX(4px);
+}
+
+/* ── Loading spinner ── */
+@keyframes login-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.login-spinner {
+    animation: login-spin 0.8s linear infinite;
+    flex-shrink: 0;
+}
+
+/* ── Security badge ── */
+.login-security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-xs);
+    color: var(--color-success);
 }
 
 /* ── Card footer ── */
@@ -93,6 +193,9 @@
 }
 
 .login-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     color: var(--color-primary);
