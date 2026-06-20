@@ -4,7 +4,7 @@ import { supabase } from '../config/supabaseClient.js'
 // ── Backend URL — change this to your Render URL when you deploy ──
 // Development : 'http://localhost:5000'
 // Production  : 'https://your-app-name.onrender.com'
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'https://expense-tracker-p7iq.onrender.com'
 
 // ── Create a shared axios instance ────────────────────────────────
 // All API functions below use this instance, not plain axios.
