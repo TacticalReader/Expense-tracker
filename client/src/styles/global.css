@@ -479,6 +479,7 @@ label {
     flex-direction: column;
     min-width: 0;
     margin-left: var(--sidebar-width);
+    padding-top: var(--navbar-height);
 }
 
 .app-content {
