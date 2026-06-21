@@ -1,3 +1,18 @@
+# Expense Tracker
+
+![GitHub repo size](https://img.shields.io/github/repo-size/TacticalReader/Expense-tracker)
+![GitHub contributors](https://img.shields.io/github/contributors/TacticalReader/Expense-tracker)
+![GitHub stars](https://img.shields.io/github/stars/TacticalReader/Expense-tracker?style=social)
+![GitHub forks](https://img.shields.io/github/forks/TacticalReader/Expense-tracker?style=social)
+![GitHub issues](https://img.shields.io/github/issues/TacticalReader/Expense-tracker)
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+
 ## 🧠 Architecture Decision (Important — Read This First)
 
 
